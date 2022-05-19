@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static '/style.css' %}" rel="stylesheet">
+        <!-- fontawesome -->
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <!-- Static Files-->
+        <link href="{% static '/style.css' %}" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+        
+            
+        <title>
+            {% block title %}
+            Document
+            {% endblock%}
+        </title>
+       
+</head>
+<body>
+    {% block nav %}
+    
+    
+    {% endblock %}
+    
+   
+
+    {% block content %}
+    
+    {% endblock %}
+
+    {% block footer%}
+
+    <footer class="footer">
+        <p>Developed by:</p>
+        
+       <ul class="social">
+           <li><a href="https://github.com/garzo94" class="fa-brands fa-github" target="_blank"></a></li>
+           <li><a href="https://www.linkedin.com/in/alexander-garzo/" class="fa-brands fa-linkedin" target="_blank"></a></li>
+           <li><a href="https://twitter.com/alex_garzo" class="fa-brands fa-twitter" target="_blank"></a></li>
+          
+           
+       </ul>
+        <span>&copy; 2022</span>
+    </footer>
+
+    {% endblock%}
+
+    
+    {% block extrascripts %}
+    {% endblock %}
+    
+    
+</body>
+</html>

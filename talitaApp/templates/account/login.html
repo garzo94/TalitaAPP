@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+    {% block title %}
+    Log in
+    {% endblock %}
+
+   
+
+{% block content %}
+    <div class="containerPage">
+     <div class="containerLogin">
+         <h1 class="title">TalitaApp</h1>
+         
+         <div class="containerForm">
+            <form  method="post" class="formLogIn">        
+                {{ form.as_p }}
+                 {% csrf_token %}
+                 <!-- <input type="hidden" name="next" value="{{ next }}" /> -->
+                 {% for message in messages %}
+                 <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                 {% endfor %}    
+                 <input type="submit" value="Log-in"> 
+                 <p class="forget"><a href="{% url 'talitaApp:password_reset' %}">Olvidaste tu contraseña?</a></p> 
+                 <p class="or">ó</p>
+                
+                   
+                <a class='google' href="{% url "social:begin" "google-oauth2" %}"> 
+                    <i class="fa-brands fa-google-plus"></i>
+                        Continuar con Google
+                        
+                </a>
+               
+                    
+                <!-- <a class='facebook' href="{% url "social:begin" "facebook" %}">
+                           
+                        <i class="fa-brands fa-facebook"></i>
+                        Continuar con Facebook  
+                       
+                </a> -->
+                                        
+                       
+                 <a href='/account/register' class="createAccountBtn"> Crear Cuenta </a> 
+                          
+            </form>
+
+         </div>
+                   
+     </div>
+
+
+     <div class="containerInfo">
+         <h1 class="infoTitle">Con TalitaApp tu puedes:</h1>
+         <section class="infoPdf">
+<!-- Pdf Section -->
+             <div class="textPdf">
+                <h1 class="titlePdf">Crear un repositorio en pdf.</h1> 
+                <br>
+                <p class="infoParra">Podrás crear un repositorio de cantos en pdf, agregando tus archivos en formato imagen,
+                    permitiéndote organizarlos por categorías. 
+                    
+                </p>               
+             </div>
+             <div class="imgPdf">
+                <img class= 'imagePdf' src="{% static 'img/pdf.png' %}" alt="">
+            </div>
+                 
+        </section>
+        <hr>
+
+         
+        
+
+
+        <div class="register">
+            <a href='/account/register' class="createBtnBottom"> Crear Cuenta </a>
+
+        </div>
+
+     </div>
+    
+
+    
+    
+{% endblock %}

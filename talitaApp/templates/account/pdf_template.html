@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Document</title>
+</head>
+<body> 
+    <style>
+      .line{
+          border:1px solid rgb(78, 44, 2)
+
+      }
+      .line2{
+        border:5px solid rgb(78, 44, 2)
+      }
+      * {
+          color:rgb(78, 44, 2)
+      }
+    </style>
+        <hr class="line" style="border:1px solid rgb(78, 44, 2)">
+        <hr class="line2" style="border:5px solid rgb(78, 44, 2)">
+        <hr class="3line" style="border:10px solid rgb(78, 44, 2); margin-bottom: 10px;">
+        <h1 style="text-align: center; font-size: 55px ; font-family: Georgia, 'Times New Roman', Times, serif; line-height: 10px; color:rgb(78, 44, 2)">{{ category }}</h1>
+        
+        <h1 style="text-align: center; font-size: 35px ;  font-family: Georgia, 'Times New Roman', Times, serif; line-height: 10px; color:rgb(78, 44, 2)">{{ user }}</h1>
+        <hr>
+        <h4 style="font-size: 20px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center;">Imágenes por nombre:</h4>
+        {% for img in images %}
+        <ul>
+            <li style="color:rgb(78, 44, 2); text-decoration: none;font-size: 17px;">{{img.nameimage}}</li>
+        </ul>
+          
+        {% endfor %}
+    
+    
+    <div>
+        <pdf:nextpage /> 
+    </div> 
+
+    {% for img in images %}
+    <h1 style="font-size: 20px; text-align: center;">{{ img.nameimage }}</h1>
+    <img style="width:735px; height: 925px; " 
+        class="singleImage"
+        src="{{ img.image.path }}"
+        alt="imagen"
+    >
+    <div>
+        <pdf:nextpage /> 
+    </div> 
+    {% endfor %}
+  
+
+    
+
+    
+</body>
+
+
+</html>

@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static '/style.css' %}" rel="stylesheet">
+        <!-- fontawesome -->
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <!-- Static Files-->
+        <link href="{% static '/style.css' %}" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+        
+            
+    <title>Editar</title>
+</head>
+<body class="bodyEdit">
+    <div class="editContainer">
+        <a href="{% url "talitaApp:dashboard" %}" class="backRepo">Regresar al Repositorio</a>
+        <img class="imageEdit"
+        src="{{ photo.image.url }}"
+        alt="imagen"
+        >
+        <form method="POST" class="formEdit">
+            {% csrf_token %}
+            <label>Nombre de la imagen</label>
+            <input type="text" name="nameimage" value="{{ photo.nameimage }}" >
+            <button type="submit" class="update" >Actualizar</button>
+
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,84 @@
+:root{
+    --brown: rgb(78, 44, 2);
+  --light: rgb(201, 179, 154);
+}
+
+body{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: rgb(219, 202, 177);
+    color: var(--brown);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+}
+
+.addContainer{
+    background-color: rgb(219, 202, 177);
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding:5rem 0rem;
+    
+}
+
+.formAdd{
+    display: flex;
+    flex-direction: column;
+    width:20%;
+    box-shadow: 5px 2px 10px var(--brown);
+    padding:2rem;
+    border-radius: 15px;
+    font-size: 15px;
+    background-color: var(--light);
+}
+
+input, select, button{
+    border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-appearance: none;
+  margin: 0.2rem;
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+button{
+    cursor: pointer;
+}
+
+h2{
+    font-family: "Mitr", sans-serif;
+  color: var(--brown);
+  padding: 0.5rem;
+  font-size: 3rem;
+  position: absolute;
+  right: 150px;
+  bottom: 0.5rem ;
+}
+
+h4{
+    
+    color: var(--brown);
+    background-color: rgb(250, 152, 152);
+}
+
+@media (max-width: 768px){
+
+
+    .formAdd{
+        width:70%;
+        
+    
+    }
+
+    h2{
+        bottom: 0px;
+    }
+}

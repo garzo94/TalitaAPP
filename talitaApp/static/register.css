@@ -1,0 +1,110 @@
+:root {
+  --brown: rgb(78, 44, 2);
+  --light: rgb(201, 179, 154);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: var(--brown);
+}
+
+body {
+  background-color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  margin: auto;
+  width: 25rem;
+  padding: 2rem;
+  border-radius: 20px;
+  margin-top: 4rem;
+  display: block;
+}
+
+form {
+  margin-top: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--brown);
+
+  text-align: center;
+}
+.parraf {
+  text-align: center;
+}
+
+p {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+input {
+  border: 1px solid var(--brown);
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-appearance: none;
+  margin: 0.2rem;
+}
+
+label {
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+input[type="submit"] {
+  cursor: pointer;
+  background-color: var(--light);
+  font-weight: 500;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--brown);
+  color: white;
+}
+
+.appName {
+  font-family: "Mitr", sans-serif;
+  color: white;
+  padding: 0.5rem;
+  font-size: 3rem;
+  position: absolute;
+  right: 45px;
+  bottom: 25px;
+}
+
+li {
+  color: red;
+  font-weight: 300;
+  list-style: none;
+}
+
+h2 {
+  font-size: 25px;
+  margin-top: 10rem;
+}
+
+
+@media (max-width: 768px){
+  .container{
+    margin: 4rem;
+  }
+
+  .appName{
+    margin-top: 2rem;
+    bottom: 10px;
+    
+  }
+}

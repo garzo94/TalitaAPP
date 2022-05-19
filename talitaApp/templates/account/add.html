@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static '/add.css' %}" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+    <title>Agregar imagen</title>
+</head>
+<body>
+    <div class="addContainer">
+        <h1>Agregar Imagen</h1>
+        <form method="POST" action="", enctype="multipart/form-data" class="formAdd">
+            {% csrf_token %}
+             
+            <h4>
+                {% if error %}
+            {{ error }}
+            {% endif %}
+
+            </h4>
+            
+
+            <label>Seleccionar Categoria</label>
+            <select name="select" class="selectField">
+                <option value="none">Seleccionar...</option>
+                {% for cat in categories %}
+                    <option value='{{forloop.counter}}'>{{cat.category}}</option>
+                {% endfor %}
+            </select>
+
+            <label>Crear categoria nueva</label>
+            <input name="category" type="text" placeholder="Nombre de la categoria" class="categoryField">
+
+            <label>Cargar Imagen</label>
+            <input required name="images" type="file" multiple class="imagesField">
+
+            <!-- <label>Nombre de la imagen</label>
+            <input required name="name" type="text" placeholder="Nombre de la imagen" class="nameField"> -->
+
+            <button type="submit" class="submitBrtn">Submit</button>
+
+
+
+
+
+
+
+        </form>
+        
+    </div>
+    <h2>TalitaApp</h2>
+    
+</body>
+</html>

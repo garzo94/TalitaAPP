@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+
+    {% block title %}
+    Repositorio
+    {% endblock %}
+    
+</head>
+<body>
+    {% block nav %}
+    <nav>
+        <div class="container">
+            <div class="leftSide">
+                <h1 class="talitaTittle">TalitaApp</h1>
+            <form actions="{% url "talitaApp:dashboard" %}" method="get" class="searchForm">
+
+            <input type="text" name="search" placeholder="Buscar...">
+            <button type="sumbit" class="search"><i class="fa-solid fa-magnifying-glass searchI"></i></button>
+
+        </form>
+
+            </div>
+        
+        
+
+        <div class="menu">
+            <a class='active repo'href="/account"><i class="fa-solid fa-file-pdf  "></i>Repositorio</a>
+            
+            <a  href="/account/logout"><i class="fa-solid fa-right-from-bracket"></i>Salir</a>
+        </div>
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+            
+
+        </button>
+                
+
+        
+    </nav>
+    {% endblock %}
+
+    {% block content %}
+    <div class="mainRepo">
+        
+        <div class="sidebar">
+            <h1 class="catego">Categorias</h1>
+            <ul>
+                {% for cat in categories %}
+                    {% if cat.category == category %}
+                    <a class="cate active" href="{% url "talitaApp:dashboard" %}?category={{cat.category}}"><li>{{ cat.category }}</li></a>
+                    {% else %}
+                    <a class="cate" href="{% url "talitaApp:dashboard" %}?category={{cat.category}}"><li>{{ cat.category }}</li></a>
+                    {% endif %}
+                {% endfor %}
+                
+            </ul>
+
+        </div>
+        <div class="gallery">
+            <h1 class="welcome">Hello {{ request.user.username}}! Bienvenido a tu repositorio.</h1>
+            <p class="infoParra">"Da click en una categoria para ver tus imagenes ó click <br> en agregar imagen para crear una nueva."</p>
+            
+            <div class="addContainer">
+                <a href="{% url "talitaApp:add" %}" class="add"> Agregar Imagen</a>
+
+                {% for cat in categories %}
+                 {% if cat.category == category %}
+                 <a href="{% url "talitaApp:pdf" %}?category={{cat.category}}" class="download">Descargar PDF</a>
+                  
+                {% endif %}
+                {% endfor %}
+
+                
+ 
+            </div>
+            <div class="containerGallery">
+
+                {% for img in images %}
+                
+
+                <div class="card">
+                   
+                    <img class="imageCard"
+                    src="{{ img.image.url }}"
+                    alt="imagen"
+                    >
+                    <h3 class="fileName">{{ img.nameimage }}</h3>
+                    <h4 class="catName"> {{ img.category }}</h4>
+                    <div class="buttonsContainer">  
+                        <a href="{% url "talitaApp:edit" img.id %}" class="view"> <i  class="edit fa-solid fa-pen-to-square"></i> Editar</a>                       
+                                                    
+                        <a href="{% url "talitaApp:deleteImg" img.id %}"><i class="trash fa-solid fa-trash-can"></i> </a>        
+                    </div> 
+               </div>
+
+               {% endfor %}
+
+                
+           </div>
+
+         
+
+            
+        </div>
+        
+    </div>
+    
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+  
+    {% block extrascripts %}
+        <script src="{% static '/app.js' %}"></script>  
+    {% endblock %}
+    
+</body>
+
+</html>
