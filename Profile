@@ -1,1 +1,0 @@
-web: gunicorn talita.wsgi --log-file -
