@@ -1,0 +1,872 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1.125rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
+
+  --brown: rgb(78, 44, 2);
+  --light: rgb(201, 179, 154);
+}
+
+.containerPage {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+/* ######### Login Page ########## */
+
+.containerLogin {
+  padding: 1rem 3rem 3rem;
+  background: url("/static/img/guitarr.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.containerForm {
+  text-align: center;
+  background-color: rgb(255, 255, 255, 0.7);
+  padding: 1rem 3rem;
+  border-radius: 0.8rem;
+}
+
+.title {
+  font-family: "Mitr", sans-serif;
+  color: white;
+  padding: 0.5rem;
+  font-size: 3rem;
+}
+label {
+  color: var(--brown);
+  display: block;
+  text-align: left;
+  padding-left: 10px;
+  font-weight: 75;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-appearance: none;
+  margin: 0.2rem;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.error {
+  font-size: 15px;
+  color: red;
+  list-style-type: none;
+  padding-top: 0.5rem;
+}
+
+.google {
+  width: 100%;
+  border-radius: 0.3rem;
+  background-color: white;
+  color: rgb(219, 68, 55);
+  padding: 0.3rem;
+  border: solid 1px rgb(219, 68, 55);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+}
+
+.google:hover {
+  color: white;
+  background-color: rgb(219, 68, 55);
+}
+
+.facebook {
+  width: 100%;
+  border-radius: 0.3rem;
+  background-color: white;
+  color: #3b5998;
+  padding: 0.3rem;
+  border: solid 1px #3b5998;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+  text-decoration: none;
+  display: block;
+}
+
+.facebook:hover {
+  color: white;
+  background-color: #3b5998;
+}
+
+input[type="submit"] {
+  border-radius: 8px;
+  border: none;
+  margin: 0.2rem;
+  padding: 0.5rem;
+  width: 100%;
+  background-color: var(--brown);
+  color: white;
+  margin-top: 2rem;
+  cursor: pointer;
+  border: solid 1.5px var(--brown);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--light);
+  color: var(--brown);
+  border: solid 1.5px var(--brown);
+}
+
+.forget a{
+color:var(--brown);
+text-decoration: u;
+
+}
+
+.or {
+  color: var(--brown);
+  margin: 1rem;
+}
+
+.createAccountBtn {
+  width: 100%;
+  border-radius: 0.3rem;
+  background-color: white;
+  color: var(--brown);
+  padding: 0.3rem;
+  border: solid 1px var(--brown);
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  margin-top: 1rem;
+}
+
+.createAccountBtn:hover {
+  color: white;
+  background-color: var(--brown);
+}
+
+/* Info Container */
+
+.containerInfo {
+  color: var(--brown);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+}
+
+.infoTitle {
+  font-size: 3rem;
+  padding: 5rem 0rem;
+}
+
+.infoPdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.titlePdf {
+  font-size: 1.5rem;
+}
+
+.imgPdf,
+.imgCal {
+  padding: 4rem 4rem;
+
+  width: 50%;
+}
+
+.imagePdf {
+  width: 100%;
+}
+
+.textPdf,
+.textInfo {
+  padding: 4rem 4rem;
+  text-align: justify;
+  width: 50%;
+}
+
+
+hr {
+  border-color: solid 1px var(--brown);
+  height: 0px;
+  width: 80%;
+}
+
+.infoCalendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.register {
+  text-align: center;
+  padding: 3rem;
+  background-color: var(--light);
+  width: 100%;
+}
+
+.createBtnBottom {
+  border-radius: 8px;
+  border: none;
+  margin: 0.2rem;
+  padding: 0.5rem;
+  width: 15rem;
+  background-color: white;
+  color: var(--brown);
+  border: solid 1px var(--brown);
+  cursor: pointer;
+  text-decoration: none;
+}
+.createBtnBottom:hover {
+  color: white;
+  background-color: var(--brown);
+  border-color: white;
+}
+
+/* ####### footer ######## */
+.footer {
+ 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--brown);
+  width: 100%;
+  color: white;
+  padding-top: 2rem;
+  
+}
+
+.social {
+  padding-top: 2rem;
+  display: flex;
+}
+
+.social li {
+  list-style-type: none;
+  text-align: center;
+}
+.social li a {
+  height: 60px;
+  width: 60px;
+  font-size: 30px;
+  color: white;
+  text-decoration: none;
+}
+
+/* ##### navbar ##### */
+
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav {
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: var(--brown);
+  color: white;
+
+  padding: 16px 32px;
+  border-bottom: 3px solid var(--light);
+}
+
+.hamburger {
+  display: none;
+  position: relative;
+  /* z-index: 1; */
+  user-select: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+}
+
+.talitaTittle {
+  font-size: 28px;
+  letter-spacing: 2px;
+  font-family: "Mitr", sans-serif;
+}
+
+.hamburger span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background-color: var(--light);
+  border-radius: 6px;
+  transform-origin: 0 0;
+  transition: 0.4s;
+}
+.hamburger:hover span:nth-child(2) {
+  transform: translateX(10px);
+}
+
+.logout {
+  display: flex;
+}
+
+.menu {
+  display: flex;
+ 
+  justify-content: end;
+  
+}
+
+.menu a {
+  color: white;
+  margin: 0 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.4s;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.menu .active{
+  background-color: var(--light);
+  color: var(--brown);
+
+}
+.fa-right-from-bracket,
+.fa-calendar-days,
+.fa-file-pdf {
+  margin-right: 8px;
+}
+
+
+
+.menu a:hover {
+  background-color: var(--light);
+  color: var(--brown);
+}
+
+
+/* #### Send Email */
+
+.sendEmailContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5.666rem auto;
+  
+  width:60%;
+  box-shadow: 5px 10px var(--brown);
+  border: solid 1px var(--brown);
+  border-radius: 20px;
+}
+
+.sendEmail{
+  width:50%
+}
+
+.olvidaste{
+  margin-bottom: 1.5rem;
+}
+
+input[name="email"]{
+  font-size: 12px;
+  width: 100%;
+  padding: 5px 5px;
+  border:1px solid var(--brown);
+  border-radius: 8px;
+}
+label[for=id_email]{
+  display: none;
+  
+
+}
+
+/* ## reset_Done ## */
+
+.emailDone{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5.665rem auto;
+  padding:2rem;
+  width:40%;
+  box-shadow: 5px 10px var(--brown);
+  border: solid 1px var(--brown);
+  border-radius: 20px;
+  text-align: justify;
+}
+
+.ingresePass{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
+  padding:2rem;
+  width:75%;
+  box-shadow: 5px 10px var(--brown);
+  border: solid 1px var(--brown);
+  border-radius: 20px;
+  text-align: justify;
+
+}
+
+input[name="new_password1"], input[name="new_password2"]{
+  border: solid 1px var(--brown)
+}
+
+/* possword set */
+
+.ingresa{
+  padding:2rem;
+  margin: 8rem auto;
+  width:75%;
+  box-shadow: 5px 10px var(--brown);
+  border: solid 1px var(--brown);
+  border-radius: 20px;
+  text-align: justify;
+
+}
+
+/* ###### Dashboard ###### */
+
+
+.welcome{
+  color:var(--brown);
+  margin-top: 6rem;
+  font-size: 25px;
+}
+.mainRepo{
+  display: flex;
+  
+}
+
+.sidebar{
+  
+  top: 75px;
+  position:fixed;
+  width:20%; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 0px 5px var(--brown);
+
+  
+}
+
+.containerGallery{
+  display: flex;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+  
+}
+
+.catego{
+  color:rgb(78, 44, 2);
+  margin: 1rem 0rem;
+  text-align: center;
+  
+}
+
+.sidebar ul {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.sidebar li {
+  text-align: center;
+  width: 100%;
+  background-color: var(--light);
+  color: var(--brown);
+  list-style-type: none;
+  padding: 0.6rem 0rem;
+  border-bottom: solid 1px var(--brown);
+
+  
+}
+a {
+  text-decoration: none;
+}
+
+a.active{
+  text-decoration: underline;
+  color:var(--brown)
+}
+
+.sidebar li:hover{
+  text-decoration: underline;
+
+}
+.infoParra{
+  color:var(--brown);
+  font-size: 20px;
+  text-align: justify;
+}
+
+.gallery{
+ 
+  margin-left: 20%;
+  width:80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.imageCard {
+  align-content: center;
+  height: 200px;
+  width:150px;
+}
+
+
+.buttonsContainer{
+  border-top: 1px solid var(--brown);
+  padding-top: 1rem;
+}
+
+.view{
+  color:var(--brown);
+  padding: 0.2rem 2rem;
+  border: solid 1px var(--brown);
+  border-radius:  10px;
+}
+
+.view:hover {
+  background-color:var(--brown);
+  color:white;
+  
+}
+
+ .trash{
+  color: var(--brown);
+  cursor: pointer;
+  
+}
+
+.fileName{
+  width:125px;
+  font-size: 15px;
+  color:var(--brown);
+  margin: 0.8rem 0rem 0rem  0rem;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.catName{
+  font-size: 14px;
+  color:var(--brown);
+  margin-bottom:   0.5rem;
+  text-align: center;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.add, .download{
+  
+  color: var(--brown);
+  background-color: var(--light);
+  border-radius: 20px;
+  padding: 0.8rem;
+  
+}
+
+.add:hover, .download:hover{
+  background-color: rgb(219, 202, 177);
+}
+
+
+.addContainer{
+ margin: 2rem  3rem 0rem;
+}
+
+/* Edit */
+
+.imageEdit{
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
+}
+
+.editContainer{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[name="nameimage"]{
+  border: 1px solid var(--brown);
+  width:300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.formEdit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.update{
+  border-radius: 8px;
+  border: none;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 15rem;
+  background-color: var(--light);
+  color: var(--brown);
+  border: solid 1px var(--brown);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.backRepo{
+  position: absolute;
+  color: var(--brown);
+  left:100px;
+  border: solid 1px var(--brown);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 2px 5px 8px var(--brown);
+  
+}
+
+.backRepo:hover{
+  background-color: var(--brown);
+  color:white;
+}
+
+.imageEdit{
+  border:1px solid var(--brown)
+}
+
+.leftSide{
+  display: flex;
+
+}
+
+/* search */
+
+.searchForm{
+  margin-left: 1rem;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.search{
+  cursor: pointer;
+  padding:0.2rem;
+  color: white;
+  border: none;
+  background-color: var(--brown);
+  border-radius: 0.6rem;
+  height: 45px;
+}
+
+.searchI{
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 769px){
+
+  /* ################ Login ################## */
+  .infoTitle {
+    font-size: 1.5rem;
+    padding: 3rem 0rem;
+  }
+
+  .infoPdf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textPdf{
+    padding: 0rem;
+    text-align: justify;
+    width: 80%;
+  }
+
+  .titlePdf{
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .imgPdf{
+    padding: 0rem;
+    width:80%;
+    margin: 2rem 0rem;
+  }
+
+  /* ############# forgot password ############### */
+ 
+  .sendEmailContainer{
+    width:90%;
+    padding:0rem;
+  }
+  /* ######## email sent message ############# */
+  .emailDone{
+    width: 80%;
+  }
+
+  /* ############# dashboard ########## */
+
+  .sidebar{
+    width: 30%;
+     
+  }
+
+  .sidebar li{
+    font-size: 18px;
+  }
+  .catego{
+    font-size: 18px;
+  }
+
+  
+  .welcome{
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .gallery{
+    margin-left: 30%;
+  }
+
+  .infoParra{
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  .add, .download{
+   padding: 0.5rem;
+   margin-top: 0.5rem;
+  }
+
+  .addContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0rem
+  }
+
+  /* #### img edit #### */
+
+  .imageEdit{
+    margin: 5rem;
+    width: 400px;
+  }
+  /* ##### nav ##### */
+
+ .hamburger{
+   display: block;
+ }
+
+.talitaTittle{
+  font-size: 25px;
+  letter-spacing: 0px;
+  
+  
+}
+.search{
+  margin-right: 0.9rem ;
+}
+
+nav{
+  padding:16px;
+}
+
+
+  .hamburger{
+    display: block;
+  }
+
+/* animation hamburger */
+.menu{
+  position:fixed;
+  Left: -100%;
+  top: 80px;
+  gap:0;
+  flex-direction: column;
+  background-color: var(--light);
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
+}
+.repo{
+  display: none;
+}
+
+.menu.active{
+  Left: 0;
+  z-index: 9;
+  padding:  1rem 0rem;
+  border-bottom: 5px solid white;
+  
+}
+
+.sidebar.active{
+  z-index: -1;
+  -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    
+    background-color: #ccc;
+
+}
+
+.gallery.active{
+  z-index: -1;
+  -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+    
+    background-color: #ccc;
+  
+}
+ 
+  
+  
+}
+
+
