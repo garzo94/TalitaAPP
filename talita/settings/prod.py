@@ -11,7 +11,7 @@ ALLOWED_HOSTS = ['talita-app.herokuapp.com']
 
 # Amazon sttings
 AWS_ACCES_KEY_ID = config('AWS_ACCES_KEY_ID')
-AWS_ACCES_KEY_ID = config('AWS_SECRET_ACCES_KEY')
+AWS_ACCESS_KEY_ID = config('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME')
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3_amazonaws.com'
 AWS_DEFAULT_ACL = 'public-read'
