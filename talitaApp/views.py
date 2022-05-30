@@ -188,7 +188,7 @@ def add(request):
             return render(request, 'account/add.html', context)
 
         elif data.get('select') != 'none':
-            category = Image.object.get(category__exact = data.get('select' ))
+            category = Image.objects.get(category__exact = data.get('select' ))
            
         elif data.get('category') != '':
             category = data.get('category')
@@ -201,8 +201,8 @@ def add(request):
                     image=img,
                     nameimage= str(img)           
                 )
-        return redirect("talitaApp:dashboard")
-        
+        # return redirect("talitaApp:dashboard")
+        return HttpResponse('<h1>que pedo wwe </h1>')
         
 
         
