@@ -5,7 +5,8 @@ from django.contrib.auth import views as auth_views
 app_name = "talitaApp"
 
 urlpatterns = [
-    path('', views.dashboard, name='dashboard'),
+    # path('', views.dashboard, name='dashboard'),
+    path('',views.dashboard, name='dashboard'),
     path('login', views.login_request, name='login'),
     path('logout', views.logout_request, name='logout'),
     path('register', views.register, name='register'),
@@ -37,11 +38,11 @@ urlpatterns = [
 
         #dashboard
     #edit
-    path('edit/<int:pk>', views.edit, name='edit'),
+    path('edit/<int:pk>/', views.edit, name='edit'),
     #add
     path('add/', views.add, name='add'),
     #delete Card
-    path('delete/<int:pk>', views.delete, name='deleteImg'),
+    path('delete/<int:pk>/', views.delete, name='deleteImg'),
 
     #pdf
     path('pdf/', views.pdf, name='pdf')

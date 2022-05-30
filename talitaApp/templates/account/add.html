@@ -26,15 +26,15 @@
             </h4>
             
 
-            <label>Seleccionar Categoria</label>
+            <label>Seleccia una categoria</label>
             <select name="select" class="selectField">
                 <option value="none">Seleccionar...</option>
                 {% for cat in categories %}
                     <option value='{{forloop.counter}}'>{{cat.category}}</option>
                 {% endfor %}
             </select>
-
-            <label>Crear categoria nueva</label>
+            <label>ó</label>
+            <label>Crea una categoria nueva</label>
             <input name="category" type="text" placeholder="Nombre de la categoria" class="categoryField">
 
             <label>Cargar Imagen</label>

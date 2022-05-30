@@ -9,7 +9,7 @@
     {% endblock %}
     
 </head>
-<body>
+<body>+
     {% block nav %}
     <nav>
         <div class="container">
@@ -92,9 +92,9 @@
                     <h3 class="fileName">{{ img.nameimage }}</h3>
                     <h4 class="catName"> {{ img.category }}</h4>
                     <div class="buttonsContainer">  
-                        <a href="{% url "talitaApp:edit" img.id %}" class="view"> <i  class="edit fa-solid fa-pen-to-square"></i> Editar</a>                       
+                        <a href="{% url "talitaApp:edit" img.id   %}" class="view"> <i  class="edit fa-solid fa-pen-to-square"></i> Editar</a>                       
                                                     
-                        <a href="{% url "talitaApp:deleteImg" img.id %}"><i class="trash fa-solid fa-trash-can"></i> </a>        
+                        <a href="{% url "talitaApp:deleteImg" img.id  %}"><i class="trash fa-solid fa-trash-can"></i> </a>        
                     </div> 
                </div>
 

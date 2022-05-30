@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm #I did not create any form so I use this for login
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse
 from .forms import UserRegistrationForm
 from .models import Profile, Image
 #### reset passwords ###
@@ -39,9 +40,9 @@ def dashboard(request):
     #getting categories from user
     categories = Image.objects.filter(user_id=request.user.id).values('category').distinct()
     
-    
+ 
     category =  request.GET.get('category')# eesto lo recibo desde la url del template ?cagegory={{category}}
-    print(category)
+    
     
     if request.GET.get('search'): 
         search = request.GET.get('search')
@@ -157,7 +158,12 @@ def edit(request, pk):
         data = request.POST
         photo.nameimage = data.get('nameimage')
         photo.save()
-        return redirect("talitaApp:dashboard")
+
+        category =  Image.objects.get(id=pk).category
+        categories = Image.objects.filter(user_id=request.user.id).values('category').distinct()
+        images = Image.objects.filter(user_id=request.user.id,category=category) 
+
+        return render(request,'account/dashboard.html', {'categories': categories,'images':images, 'category':category})
     return render(request, 'account/edit.html',{'photo':photo})
 
 def add(request):
@@ -173,6 +179,10 @@ def add(request):
 
         if data.get('category') == '' and data.get('select') == 'none':
             context = {'error': 'Selecciona una categoria o crea una nueva.'}
+            return render(request, 'account/add.html', context)
+
+        elif data.get('category') != '' and data.get('select') != 'none':
+            context = {'error': 'Si seleccionas una categoria no puedes crear una al mismo tiempo'}
             return render(request, 'account/add.html', context)
 
         elif data.get('select') != 'none':
@@ -199,9 +209,22 @@ def add(request):
 
 def delete(request, pk):
 
+    category =  Image.objects.get(id=pk).category
+    print('###',category)
+
     card = Image.objects.get(id=pk)
     card.delete()
-    return redirect('talitaApp:dashboard')
+
+
+    categories = Image.objects.filter(user_id=request.user.id).values('category').distinct()
+    
+    
+ 
+    
+
+    images = Image.objects.filter(user_id=request.user.id,category=category) 
+    
+    return render(request,'account/dashboard.html', {'categories': categories,'images':images, 'category':category})
     
 
     
