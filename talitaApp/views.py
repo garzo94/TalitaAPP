@@ -202,7 +202,8 @@ def add(request):
                     nameimage= str(img)           
                 )
         # return redirect("talitaApp:dashboard")
-        return HttpResponse('<h1>que pedo wwe </h1>')
+        return redirect("talitaApp:dashboard")
+        
         
 
         
