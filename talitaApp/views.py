@@ -150,7 +150,7 @@ def pdf(request):
        html, dest=response)
 
     
-    return response
+    return HttpResponse('<h1>Hola</h1>')
 
 def edit(request, pk):
     photo = Image.objects.get(id=pk)
