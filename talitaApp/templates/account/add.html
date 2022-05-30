@@ -30,7 +30,7 @@
             <select name="select" class="selectField">
                 <option value="none">Seleccionar...</option>
                 {% for cat in categories %}
-                    <option value='{{forloop.counter}}'>{{cat.category}}</option>
+                    <option value='{{cat.category}}'>{{cat.category}}</option>
                 {% endfor %}
             </select>
             <label>ó</label>

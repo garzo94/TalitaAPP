@@ -188,9 +188,11 @@ def add(request):
             return render(request, 'account/add.html', context)
 
         elif data.get('select') != 'none':
-            category = Image.objects.get(category__exact = data.get('select' ))
+
+            
+            category = data.get('select')
            
-        elif data.get('category') != '':
+        elif data.get('select') == 'none':
             category = data.get('category')
 
         for img in imgs:
