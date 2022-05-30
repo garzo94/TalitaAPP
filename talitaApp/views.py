@@ -61,6 +61,8 @@ def dashboard(request):
     return render(request,'account/dashboard.html', {'categories': categories,'images':images, 'category':category})
 
 def login_request(request):
+
+    template_path= 'account/pdf_template.html'
     
     
     if request.method == 'POST':
