@@ -124,30 +124,30 @@ def register(request):
         return render(request,'account/register.html',{'user_form': user_form})
 
 def pdf(request):
-    category =  request.GET.get('category')
+    # category =  request.GET.get('category')
     
-    #retrieving images by category
-    images = Image.objects.all().filter(user_id = request.user.id, category=category)
-    
-
-    
+    # #retrieving images by category
+    # images = Image.objects.all().filter(user_id = request.user.id, category=category)
     
 
-    #xhtml2pdf
-    template_path= 'account/pdf_template.html'
-    context = {
-        'user':request.user,
-        'images':images,
-        'category': category
-    }
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
-    template = get_template(template_path)
-    html = template.render(context)
+    
+    
 
-    #create a pdf
-    pisa_status = pisa.CreatePDF(
-       html, dest=response)
+    # #xhtml2pdf
+    # template_path= 'account/pdf_template.html'
+    # context = {
+    #     'user':request.user,
+    #     'images':images,
+    #     'category': category
+    # }
+    # response = HttpResponse(content_type='application/pdf')
+    # response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    # template = get_template(template_path)
+    # html = template.render(context)
+
+    # #create a pdf
+    # pisa_status = pisa.CreatePDF(
+    #    html, dest=response)
 
     
     return HttpResponse('<h1>Hola</h1>')
