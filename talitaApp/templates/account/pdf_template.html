@@ -43,13 +43,11 @@
 
     {% for img in images %}
     <h1 style="font-size: 20px; text-align: center;">{{ img.nameimage }}</h1>
-    <h4>{{ img.image}}</h4>
-    <h5>{{ img.name}}</h5>
-    <h6>{{img.image.name}}</h6>
+    
 
     <img style="width:735px; height: 925px; " 
         class="singleImage"
-        src="{{ img.image.name }}" 
+        src="{{ img.image.url }}" 
         alt="imagen"
     >
     <div>
