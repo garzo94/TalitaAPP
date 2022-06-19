@@ -141,7 +141,7 @@ def pdf(request):
         'category': category
     }
     response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="report.pdf"'
+    response['Content-Disposition'] = f"attachment; filename={category}.pdf"
     template = get_template(template_path)
     html = template.render(context)
 

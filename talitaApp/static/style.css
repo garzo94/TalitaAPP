@@ -772,8 +772,8 @@ input[name="nameimage"]{
   }
 
   .infoParra{
-    font-size: 15px;
-    text-align: justify;
+    font-size: 11px;
+    text-align: center;
   }
 
   .add, .download{
