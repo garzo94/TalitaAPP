@@ -784,7 +784,7 @@ input[name="nameimage"]{
   .addContainer{
     display: flex;
     flex-direction: column;
-    margin: 1rem 0rem
+    margin: 1.1rem 0rem
   }
 
   /* #### img edit #### */
